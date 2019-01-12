@@ -25,7 +25,7 @@ const helper = require('../lib/helper');
        filename: (req, file, cb) => {
          cb(null,  dir + '/' + Date.now() + Math.round(Math.random() * 98765) + ".pdf" )
        },
-       fileFilter: function (req, file, cb) {
+       fileFilter:  (req, file, cb) => {
          if (path.extension(file.originalname) !== '.pdf') {
            return cb(new Error('Only pdfs are allowed'))
          }
